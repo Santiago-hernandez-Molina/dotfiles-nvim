@@ -1,0 +1,32 @@
+require("conform").setup({
+	notify_on_error = true,
+	formatters_by_ft = {
+		-- prettier
+		typescriptreact = { "prettier" },
+		javascriptreact = { "prettier" },
+		htmlangular = { "prettier" },
+		javascript = { "prettier" },
+		typescript = { "prettier" },
+		json = { "prettier" },
+		vue = { "prettier" },
+		css = { "prettier" },
+		scss = { "prettier" },
+		--
+		typst = { "typstyle" },
+		lua = { "stylua" },
+		python = { "autopep8" },
+		java = { "google-java-format" },
+		go = { "gofumpt" },
+		ruby = { "rubocop" },
+		rust = { "rustfmt" },
+		zsh = { "beautysh" },
+		sh = { "shfmt" },
+		yaml = { "yamlfmt" },
+		html = { "htmlbeautifier" },
+		dart = { "dart_format" },
+		bib = { "bibtex-tidy" },
+		xml = { "xmlformat" },
+		cs = { "csharpier" },
+		sql = { "sql_formatter" },
+	},
+})
