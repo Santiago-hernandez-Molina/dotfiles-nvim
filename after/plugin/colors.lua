@@ -9,12 +9,12 @@ local config = {
 		functions = {},
 		variables = {},
 		sidebars = "transparent", -- style for sidebars, see below
-		floats = "night", -- style for floating windows
+		floats = "dark", -- style for floating windows
 	},
 	sidebars = { "qf", "help", "packer", "dap", "NvimTree" },
 	hide_inactive_statusline = true,
-	dim_inactive = true, -- dims inactive windows
-	lualine_bold = true, -- When `true`, section headers in the lualine theme will be bold
+	dim_inactive = false, -- dims inactive windows
+	lualine_bold = false, -- When `true`, section headers in the lualine theme will be bold
 
 	on_highlights = function(hl, c)
 		local prompt = "#2d3149"

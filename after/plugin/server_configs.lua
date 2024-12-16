@@ -9,8 +9,8 @@ local pyright_opts = {
 	},
 	python = {
 		analysis = {
-			autoSearchPaths = false,
-			typeCheckingMode = "basic", -- off, basic, strict
+			autoSearchPaths = true,
+			-- typeCheckingMode = "basic", -- off, basic, strict
 		},
 	},
 }
@@ -94,4 +94,3 @@ require("lspconfig").ts_ls.setup({})
 require("lspconfig").tailwindcss.setup({
 	root_dir = util.root_pattern("tailwind.config.js"),
 })
-

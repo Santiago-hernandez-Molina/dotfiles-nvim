@@ -29,6 +29,8 @@ vim.opt.isfname:append("@-@")
 vim.opt.updatetime = 150
 vim.opt.spell = true
 vim.opt.spelllang = { "es", "en" }
+vim.opt.spelloptions = "camel"
+
 
 vim.g.android_xml_compl_type = "omni"
 vim.g.android_sdk_path = os.getenv("HOME") .. "/Android/Sdk"

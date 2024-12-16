@@ -8,8 +8,6 @@ return require("packer").startup(function(use)
 	use({ "catppuccin/nvim", as = "catppuccin" })
 	use("folke/tokyonight.nvim")
 	use("getomni/neovim")
-	-- ^^^^^^^^^^
-
 
 	use("nvim-treesitter/nvim-treesitter", { run = ":TSUpdate" })
 	use({ "stevearc/dressing.nvim" })
@@ -20,7 +18,7 @@ return require("packer").startup(function(use)
 	use({
 		"ThePrimeagen/harpoon",
 		branch = "harpoon2",
-		requires = { { "nvim-lua/plenary.nvim" } },
+		requires = { "nvim-lua/plenary.nvim" },
 	})
 	use({
 		"kdheepak/lazygit.nvim",
@@ -28,24 +26,19 @@ return require("packer").startup(function(use)
 			"nvim-lua/plenary.nvim",
 		},
 	})
-	use({
-		"windwp/nvim-autopairs",
-		config = function()
-			require("nvim-autopairs").setup({})
-		end,
-	})
+	use("windwp/nvim-autopairs")
 	use({ "nvim-lualine/lualine.nvim" })
 	use({ "gbrlsnchs/telescope-lsp-handlers.nvim" })
 	use({
 		"nvim-telescope/telescope.nvim",
 		tag = "0.1.5",
-		requires = { { "nvim-lua/plenary.nvim" } },
+		requires = {
+			"nvim-lua/plenary.nvim",
+			use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" }),
+		},
 	})
 	use({
 		"jiaoshijie/undotree",
-		config = function()
-			require("undotree").setup()
-		end,
 		requires = {
 			"nvim-lua/plenary.nvim",
 		},
@@ -78,7 +71,7 @@ return require("packer").startup(function(use)
 		end,
 	})
 
-    -- Specific for servers
+	-- Specific for servers
 	use("styled-components/vim-styled-components")
 	use("Hoffs/omnisharp-extended-lsp.nvim")
 	use({

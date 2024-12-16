@@ -2,7 +2,7 @@ local cmp = require("cmp")
 
 local cmp_config = {
 	mapping = cmp.mapping.preset.insert({
-		["<C-y>"] = cmp.mapping.confirm({ select = false }),
+		["<C-y>"] = cmp.mapping.confirm({ select = true }),
 		["<C-p>"] = cmp.mapping.select_prev_item(),
 		["<TAB>"] = cmp.mapping.select_next_item(),
 		["<C-n>"] = cmp.mapping.select_next_item(),
@@ -10,10 +10,9 @@ local cmp_config = {
 	}),
 	preselect = "none",
 	completion = {
-		completeopt = "menu,menuone,noinsert",
+		completeopt = "menu,menuone",
 	},
 	window = {
-		completion = cmp.config.window.bordered(),
 		documentation = cmp.config.window.bordered(),
 	},
 	snippet = {

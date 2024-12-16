@@ -1,6 +1,7 @@
 vim.g.mapleader = " "
 vim.keymap.set("n", "<C-s>", vim.cmd.w)
 vim.keymap.set("n", "<leader>u", require("undotree").toggle, { noremap = true, silent = true })
+vim.keymap.set("t", "<C-q>", "<C-\\><C-n>", { noremap = true, silent = true })
 
 -- or
 vim.keymap.set("n", "<leader>uo", require("undotree").open, { noremap = true, silent = true })
