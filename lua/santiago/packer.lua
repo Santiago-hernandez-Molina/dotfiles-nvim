@@ -37,30 +37,29 @@ return require("packer").startup(function(use)
 			use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" }),
 		},
 	})
+
 	use({
 		"jiaoshijie/undotree",
 		requires = {
 			"nvim-lua/plenary.nvim",
 		},
 	})
+
 	use({
-		"VonHeikemen/lsp-zero.nvim",
-		branch = "v3.x",
+		"neovim/nvim-lspconfig",
 		requires = {
-			{ "neovim/nvim-lspconfig" },
-			{ "hrsh7th/nvim-cmp" },
-			{ "hrsh7th/cmp-nvim-lsp" },
-			{ "hrsh7th/cmp-path" },
+			{ "Saghen/blink.cmp", tag = "v0.*" },
+
 			{ "f3fora/cmp-spell" },
+			{ "saghen/blink.compat" },
+
 			{ "williamboman/mason.nvim" },
 			{ "williamboman/mason-lspconfig.nvim" },
-			{ "hrsh7th/cmp-buffer" },
-			{ "L3MON4D3/LuaSnip" },
-			{ "saadparwaiz1/cmp_luasnip" },
-			{ "hrsh7th/cmp-nvim-lua" },
+			-- { "L3MON4D3/LuaSnip" },
 			{ "rafamadriz/friendly-snippets" },
 		},
 	})
+
 	use("terrortylor/nvim-comment")
 	use("andweeb/presence.nvim")
 	use("norcalli/nvim-colorizer.lua")

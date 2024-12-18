@@ -11,7 +11,6 @@ local bubbles_theme = {
 	insert = { a = { fg = colors.bg, bg = colors.green } },
 	visual = { a = { fg = colors.bg, bg = colors.purple } },
 	replace = { a = { fg = colors.bg, bg = colors.orange } },
-
 	inactive = {},
 }
 
@@ -57,6 +56,5 @@ require("lualine").setup({
 		},
 	},
 
-	tabline = {},
 	extensions = { "oil", "quickfix", "fzf", "symbols-outline" },
 })

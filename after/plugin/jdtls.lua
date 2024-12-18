@@ -100,4 +100,5 @@ local init = function()
 		desc = "Start java language server",
 	})
 end
+
 init()

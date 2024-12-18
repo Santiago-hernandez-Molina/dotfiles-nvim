@@ -15,7 +15,6 @@ require("conform").setup({
 		typst = { "typstyle" },
 		lua = { "stylua" },
 		python = { "autopep8" },
-		java = { "google-java-format" },
 		go = { "gofumpt" },
 		ruby = { "rubocop" },
 		rust = { "rustfmt" },

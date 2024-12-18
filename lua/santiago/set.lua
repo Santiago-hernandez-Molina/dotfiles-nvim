@@ -16,6 +16,7 @@ vim.opt.swapfile = false
 vim.opt.backup = false
 vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 vim.opt.undofile = true
+vim.opt.clipboard="unnamedplus"
 
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
@@ -31,7 +32,5 @@ vim.opt.spell = true
 vim.opt.spelllang = { "es", "en" }
 vim.opt.spelloptions = "camel"
 
-
 vim.g.android_xml_compl_type = "omni"
 vim.g.android_sdk_path = os.getenv("HOME") .. "/Android/Sdk"
-

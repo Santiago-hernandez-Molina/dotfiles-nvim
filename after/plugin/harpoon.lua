@@ -3,6 +3,9 @@ harpoon.setup({
 	settings = {
 		save_on_toggle = true,
 		sync_on_ui_close = true,
+		tabline = true,
+		tabline_prefix = "   ",
+		tabline_suffix = "   ",
 	},
 })
 
@@ -30,6 +33,7 @@ end)
 vim.keymap.set("n", "<leader>h", function()
 	harpoon:list():prev()
 end)
+
 vim.keymap.set("n", "<leader>l", function()
 	harpoon:list():next()
 end)

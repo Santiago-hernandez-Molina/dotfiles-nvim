@@ -1,7 +1,6 @@
 local lint = require("lint")
 
-lint.linters_by_ft = {
-}
+lint.linters_by_ft = {}
 
 lint.default_severity = {
 	["error"] = vim.diagnostic.severity.ERROR,
