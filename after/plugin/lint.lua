@@ -1,6 +1,7 @@
 local lint = require("lint")
 
-lint.linters_by_ft = {}
+lint.linters_by_ft = {
+}
 
 lint.default_severity = {
 	["error"] = vim.diagnostic.severity.ERROR,
@@ -9,7 +10,7 @@ lint.default_severity = {
 	["hint"] = vim.diagnostic.severity.HINT,
 }
 
-vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost", "InsertEnter", "InsertLeave" }, {
+vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost", "InsertLeave" }, {
 	callback = function()
 		lint.try_lint()
 	end,

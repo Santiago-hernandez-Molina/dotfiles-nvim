@@ -15,10 +15,11 @@ require("nvim-treesitter.configs").setup({
 		"css",
 		"html",
 		"tsx",
-		"bash"
+		"bash",
 	},
 
 	sync_install = false,
+	indent = { enable = true },
 
 	highlight = {
 		enable = true,

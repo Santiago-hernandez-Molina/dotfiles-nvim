@@ -17,6 +17,30 @@ local servers = {
 		},
 	},
 
+	rust_analyzer = {
+		cmd = { "rust-analyzer" },
+		settings = {
+			["rust-analyzer"] = {
+				imports = {
+					granularity = {
+						group = "module",
+					},
+				},
+				checkOnSave = {
+                    command = "clippy"
+				},
+				cargo = {
+					buildScripts = {
+						enable = true,
+					},
+				},
+				procMacro = {
+					enable = true,
+				},
+			},
+		},
+	},
+
 	lua_ls = {
 		settings = {
 			Lua = {

@@ -22,7 +22,6 @@ require("conform").setup({
 		sh = { "shfmt" },
 		yaml = { "yamlfmt" },
 		html = { "htmlbeautifier" },
-		dart = { "dart_format" },
 		bib = { "bibtex-tidy" },
 		xml = { "xmlformat" },
 		cs = { "csharpier" },

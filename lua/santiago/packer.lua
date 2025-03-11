@@ -4,10 +4,8 @@ return require("packer").startup(function(use)
 	use("wbthomason/packer.nvim")
 
 	-- Colorscheme
-	use("ayu-theme/ayu-vim")
-	use({ "catppuccin/nvim", as = "catppuccin" })
 	use("folke/tokyonight.nvim")
-	use("getomni/neovim")
+    use("Shatur/neovim-ayu")
 
 	use("nvim-treesitter/nvim-treesitter", { run = ":TSUpdate" })
 	use({ "stevearc/dressing.nvim" })
@@ -15,6 +13,7 @@ return require("packer").startup(function(use)
 	use("lukas-reineke/indent-blankline.nvim")
 	use("stevearc/conform.nvim")
 	use("mfussenegger/nvim-lint")
+
 	use({
 		"ThePrimeagen/harpoon",
 		branch = "harpoon2",
@@ -48,15 +47,12 @@ return require("packer").startup(function(use)
 	use({
 		"neovim/nvim-lspconfig",
 		requires = {
-			{ "Saghen/blink.cmp", tag = "v0.*" },
-
-			{ "f3fora/cmp-spell" },
-			{ "saghen/blink.compat" },
+			{ "Saghen/blink.cmp", tag = "*" },
 
 			{ "williamboman/mason.nvim" },
 			{ "williamboman/mason-lspconfig.nvim" },
-			-- { "L3MON4D3/LuaSnip" },
 			{ "rafamadriz/friendly-snippets" },
+			{ "L3MON4D3/LuaSnip" },
 		},
 	})
 
@@ -72,7 +68,9 @@ return require("packer").startup(function(use)
 
 	-- Specific for servers
 	use("styled-components/vim-styled-components")
+
 	use("Hoffs/omnisharp-extended-lsp.nvim")
+
 	use({
 		"akinsho/flutter-tools.nvim",
 		requires = {

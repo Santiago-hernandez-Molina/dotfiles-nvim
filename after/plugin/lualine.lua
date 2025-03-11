@@ -1,6 +1,26 @@
 local colors = require("tokyonight.colors").setup()
 local prompt = "#2d3149"
 
+local mode_map = {
+	["NORMAL"] = "N",
+	["O-PENDING"] = "N?",
+	["INSERT"] = "I",
+	["VISUAL"] = "V",
+	["V-BLOCK"] = "VB",
+	["V-LINE"] = "VL",
+	["V-REPLACE"] = "VR",
+	["REPLACE"] = "R",
+	["COMMAND"] = "!",
+	["SHELL"] = "SH",
+	["TERMINAL"] = "T",
+	["EX"] = "X",
+	["S-BLOCK"] = "SB",
+	["S-LINE"] = "SL",
+	["SELECT"] = "S",
+	["CONFIRM"] = "Y?",
+	["MORE"] = "M",
+}
+
 local bubbles_theme = {
 	normal = {
 		a = { fg = colors.bg, bg = colors.fg_sidebar },
@@ -45,9 +65,16 @@ require("lualine").setup({
 	},
 	sections = {
 		lualine_a = {
-			{ "mode", separator = { right = "", left = "" }, right_padding = 1 },
+			{
+				"mode",
+				fmt = function(s)
+					return mode_map[s] or s
+				end,
+				separator = { right = "", left = "" },
+				right_padding = 1,
+			},
 		},
-		lualine_b = { "fileformat", "filename", { "branch", icon = "" }, "diff" },
+		lualine_b = { "filename", "fileformat", { "branch", icon = "" }, "diff" },
 		lualine_c = {},
 		lualine_x = {},
 		lualine_y = { { lsp.getName, icon = lsp.icon }, "diagnostics", "filetype" },

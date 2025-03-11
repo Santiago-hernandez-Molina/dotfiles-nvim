@@ -48,5 +48,17 @@ local config = {
 		}
 	end,
 }
+require('ayu').setup({
+    overrides = {
+        Normal = { bg = "None" },
+        NormalFloat = { bg = "none" },
+        ColorColumn = { bg = "None" },
+        SignColumn = { bg = "None" },
+        Folded = { bg = "None" },
+        FoldColumn = { bg = "None" },
+        CursorColumn = { bg = "None" },
+        VertSplit = { bg = "None" },
+    },
+})
 require("tokyonight").setup(config)
 vim.cmd("colorscheme tokyonight")
