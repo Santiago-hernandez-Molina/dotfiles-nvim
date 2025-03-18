@@ -27,7 +27,7 @@ local servers = {
 					},
 				},
 				checkOnSave = {
-                    command = "clippy"
+					command = "clippy",
 				},
 				cargo = {
 					buildScripts = {

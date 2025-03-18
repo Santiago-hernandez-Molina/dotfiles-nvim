@@ -61,7 +61,7 @@ require("lualine").setup({
 			newfile = "[New]", -- Text to show for newly created file before first write
 		},
 		section_separators = { left = "", right = "" },
-		disabled_filetypes = { "packer", "NvimTree" },
+		disabled_filetypes = { "packer", "NvimTree", "copilot-chat" },
 	},
 	sections = {
 		lualine_a = {
