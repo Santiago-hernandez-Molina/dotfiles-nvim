@@ -77,7 +77,6 @@ local servers = {
 	},
 
 	lemminx = {
-		cmd = { "java", "-jar", HOME .. "/lemminx/org.eclipse.lemminx-uber.jar" },
 		filetypes = { "xml" },
 	},
 

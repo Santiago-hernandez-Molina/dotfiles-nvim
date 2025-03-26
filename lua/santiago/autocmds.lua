@@ -26,3 +26,5 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		end
 	end,
 })
+
+vim.cmd [[highlight StatusLineNC guibg=NONE ctermbg=NONE]]

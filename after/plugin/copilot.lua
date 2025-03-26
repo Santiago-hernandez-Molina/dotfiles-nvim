@@ -14,7 +14,7 @@ local prompts = {
 	Wording = "Please improve the grammar and wording of the following text.",
 }
 
-require("CopilotChat").setup({
+local copilotChatOPts = {
 	enabled = true,
 	prompts = prompts,
 	show_folds = false,
@@ -22,11 +22,12 @@ require("CopilotChat").setup({
 	window = {
 		layout = "float",
 		width = 0.8,
-		height = 0.7,
-		border = "rounded",
+		height = 0.8,
+		border = "solid",
 		relative = "editor",
 		references_display = "write",
 	},
 	chat_autocomplete = true,
   headless = false,
-})
+}
+-- require("CopilotChat").setup(copilotChatOPts)
