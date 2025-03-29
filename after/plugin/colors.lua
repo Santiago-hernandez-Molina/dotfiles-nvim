@@ -48,5 +48,7 @@ local config = {
     }
   end,
 }
+
+
 require("tokyonight").setup(config)
 vim.cmd("colorscheme tokyonight")

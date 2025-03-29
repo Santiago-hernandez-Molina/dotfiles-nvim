@@ -31,7 +31,6 @@ local bubbles_theme = {
   insert = { a = { fg = colors.bg, bg = colors.green } },
   visual = { a = { fg = colors.bg, bg = colors.purple } },
   replace = { a = { fg = colors.bg, bg = colors.orange } },
-  inactive = { b = { bg = "None" }, c = { bg = "None" } },
 }
 
 local lsp = {
@@ -73,7 +72,6 @@ require("lualine").setup({
           return mode_map[s] or s
         end,
         separator = { right = "", left = "" },
-        right_padding = 1,
       },
     },
     lualine_b = { "filename", "fileformat", { "branch", icon = "" }, "diff" },
@@ -81,7 +79,7 @@ require("lualine").setup({
     lualine_x = {},
     lualine_y = { { lsp.getName, icon = lsp.icon }, "diagnostics", "filetype" },
     lualine_z = {
-      { "progress", separator = { left = "", right = "" }, left_padding = 1 },
+      { "progress", separator = { left = "", right = "" }},
     },
   },
 

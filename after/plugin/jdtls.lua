@@ -1,7 +1,6 @@
 local HOME = vim.fn.expand("$HOME")
 
 local opts = {
-
   cmd = { HOME .. "/jdtls/init.sh" },
   root_dir = require("jdtls.setup").find_root({ ".git", "mvnw", "gradlew" }),
   flags = {
@@ -54,7 +53,7 @@ local opts = {
         },
         {
           name = "JavaSE-8",
-          path = "/usr/lib/jvm/java-8-openjdk-amd64/",
+          path = "/usr/lib/jvm/java-1.8.0-openjdk-amd64/",
         },
       },
       sources = {
@@ -96,7 +95,7 @@ end
 
 local init = function()
   vim.api.nvim_create_autocmd({ "FileType" }, {
-    pattern = "java",
+    pattern = {"java", "jproperties"},
     callback = function()
       Start_jdt()
     end,

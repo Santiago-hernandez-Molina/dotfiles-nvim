@@ -1,18 +1,21 @@
 local avanteConfig = {
   provider = "copilot",
+  copilot = {
+    model = "claude-3.7-sonnet"
+  },
 
   behaviour = {
-    auto_focus_sidebar = true,
+    auto_focus_sidebar = false,
     auto_suggestions_respect_ignore = false,
     jump_result_buffer_on_finish = false,
-    use_cwd_as_project_root = false,
+    use_cwd_as_project_root = true,
 
     auto_suggestions = false,
     auto_set_highlight_group = true,
     auto_set_keymaps = true,
     auto_apply_diff_after_generation = false,
     support_paste_from_clipboard = true,
-    minimize_diff = true,
+    minimize_diff = false,
     enable_token_counting = true,
     enable_cursor_planning_mode = false,
     enable_claude_text_editor_tool_mode = false,
@@ -82,6 +85,8 @@ local avanteConfig = {
       border = "rounded",
     },
   },
+
+  disabled_tools = { "python", "web_search", "git_commit", "dispatch_agent" },
 }
 
 require("avante").setup(avanteConfig)

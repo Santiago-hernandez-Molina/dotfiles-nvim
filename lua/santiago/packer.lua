@@ -14,6 +14,7 @@ return require("packer").startup(function(use)
       vim.g.copilot_no_tab_map = true
       vim.g.copilot_assume_mapped = true
       vim.g.copilot_enabled = false
+      vim.g.copilot_node_command = "~/.nvm/versions/node/v20.19.0/bin/node"
     end,
   })
 
@@ -42,7 +43,6 @@ return require("packer").startup(function(use)
 
   -- UI Enhancements
   use("nvim-tree/nvim-web-devicons")
-  use("lukas-reineke/indent-blankline.nvim")
   use("stevearc/conform.nvim")
   use("mfussenegger/nvim-lint")
   use("folke/snacks.nvim")
