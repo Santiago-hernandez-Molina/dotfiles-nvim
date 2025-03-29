@@ -9,5 +9,3 @@ vim.keymap.set("n", "<leader>uc", require("undotree").close, { noremap = true, s
 vim.keymap.set("n", "<leader>gg", ":LazyGit<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>fa", require("telescope").extensions.flutter.commands, { noremap = true, silent = true })
 vim.keymap.set("x", "<leader>p", [["_dP]])
-
-vim.keymap.set({ "n", "v" }, "<leader>cc", ":CopilotChat <CR>", { noremap = true, silent = true })

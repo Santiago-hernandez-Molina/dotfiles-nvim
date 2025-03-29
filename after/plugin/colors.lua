@@ -11,7 +11,7 @@ local config = {
     sidebars = "transparent",
     floats = "transparent",
   },
-  sidebars = { "qf", "help", "packer", "dap", "NvimTree" },
+  sidebars = { "qf", "help", "packer", "dap", "NvimTree", "Avante", "AvanteInput", "AvanteSelectedFiles" },
   hide_inactive_statusline = true,
   dim_inactive = true,
   lualine_bold = true,
@@ -51,4 +51,28 @@ local config = {
 
 
 require("tokyonight").setup(config)
+local colors = require("tokyonight.colors").setup()
+
+vim.api.nvim_create_autocmd("ColorScheme", {
+  pattern = "*",
+  callback = function()
+    vim.api.nvim_set_hl(0, "AvanteSidebarWinSeparator", {
+      fg = colors.bg_dark,
+      bg = "none",
+    })
+
+    vim.api.nvim_set_hl(0, "AvanteSidebarWinHorizontalSeparator", {
+      fg = colors.bg_dark,
+      bg = "none",
+    })
+
+    vim.api.nvim_set_hl(0, "WinSeparator", {
+      fg = colors.bg_dark,
+      bg = "none",
+    })
+
+    -- Set empty horizontal separator
+  end,
+  desc = "Set Avante sidebar separator colors",
+})
 vim.cmd("colorscheme tokyonight")

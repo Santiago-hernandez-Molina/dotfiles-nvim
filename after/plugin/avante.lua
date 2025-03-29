@@ -11,7 +11,7 @@ local avanteConfig = {
     use_cwd_as_project_root = true,
 
     auto_suggestions = false,
-    auto_set_highlight_group = true,
+    auto_set_highlight_group = false,
     auto_set_keymaps = true,
     auto_apply_diff_after_generation = false,
     support_paste_from_clipboard = true,
@@ -60,18 +60,21 @@ local avanteConfig = {
     },
   },
 
+  highlights = {
+  },
+
   windows = {
-    position = "left",  -- the position of the sidebar
+    position = "right", -- the position of the sidebar
     wrap = true,        -- similar to vim.o.wrap
-    width = 40,         -- default % based on available width
+    width = 38,         -- default % based on available width
     sidebar_header = {
-      enabled = true,   -- true, false to enable/disable the header
-      align = "center", -- left, center, right for title
-      rounded = true,
+      enabled = false,   -- true, false to enable/disable the header
+      align = "left", -- left, center, right for title
+      rounded = false,
     },
     input = {
       prefix = " ",
-      height = 6, -- Height of the input window in vertical layout
+      height = 5, -- Height of the input window in vertical layout
     },
     edit = {
       start_insert = true, -- Start insert mode when opening the edit window
@@ -79,7 +82,7 @@ local avanteConfig = {
     },
     ask = {
       floating = false,          -- Open the 'AvanteAsk' prompt in a floating window
-      start_insert = false,      -- Start insert mode when opening the ask window
+      start_insert = true,       -- Start insert mode when opening the ask window
       ---@type "ours" | "theirs"
       focus_on_apply = "theirs", -- which diff to focus after applying
       border = "rounded",
