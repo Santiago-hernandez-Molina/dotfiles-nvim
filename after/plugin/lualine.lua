@@ -73,7 +73,6 @@ require("lualine").setup({
           return mode_map[s] or s
         end,
         separator = { right = "", left = "" },
-        right_padding = 1,
       },
     },
     lualine_b = { "filename", "fileformat", { "branch", icon = "" }, "diff" },

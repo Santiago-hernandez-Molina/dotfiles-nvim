@@ -56,6 +56,15 @@ vim.api.nvim_create_autocmd("LspAttach", {
 	end,
 })
 
+-- Configure hover and signature help to have rounded borders
+vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
+  border = "rounded",
+})
+
+vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
+  border = "rounded",
+})
+
 -- DIAGNOSTICS
 vim.diagnostic.config({
 	virtual_text = true,
