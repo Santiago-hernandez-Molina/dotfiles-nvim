@@ -17,8 +17,6 @@ return {
                 CursorColumn = { bg = "None" },
                 VertSplit = { bg = "None" },
             },
-
-            transparent_background = true
         })
     end
 }

@@ -64,7 +64,7 @@ return {
                 newfile = "[New]", -- Text to show for newly created file before first write
             },
             section_separators = { left = "", right = "" },
-            disabled_filetypes = {  "NvimTree" },
+            disabled_filetypes = { "NvimTree" },
         },
         sections = {
             lualine_a = {
