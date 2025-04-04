@@ -54,6 +54,7 @@ return {
 
     {
         "zapling/mason-conform.nvim",
+        priority = 40,
         lazy = false,
     },
 }

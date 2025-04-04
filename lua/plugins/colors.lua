@@ -54,7 +54,6 @@ return {
                     fg = c.orange,
                 }
 
-                hl.StatusLineNC = { link = "StatusLine" }
 
             end
         })
