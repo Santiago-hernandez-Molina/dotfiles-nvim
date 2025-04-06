@@ -25,8 +25,8 @@ return {
         },
         input = { enabled = true },
         picker = {
-            enabled = true,
-            ui_select = true,
+            enabled = false,
+            ui_select = false,
         },
         git = { enabled = true },
         health = { enabled = true },
@@ -66,6 +66,7 @@ return {
         scroll = { enabled = false },
     },
     keys = {
+---@diagnostic disable-next-line: undefined-global
         { "<leader>gg", function() Snacks.lazygit() end, desc = "Lazygit" },
     },
 }

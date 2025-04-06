@@ -6,7 +6,7 @@ vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 
-vim.opt.smartindent = true
+vim.opt.smartindent = false
 vim.opt.autoindent = false
 vim.opt.cursorline = true
 
@@ -40,3 +40,6 @@ vim.g.copilot_no_tab_map = true
 vim.g.copilot_assume_mapped = true
 vim.g.copilot_enabled = false
 vim.g.copilot_node_command = "~/.nvm/versions/node/v20.19.0/bin/node"
+
+-- Enable mouse support for all modes (normal, visual, insert, command)
+vim.opt.mouse = "a"
