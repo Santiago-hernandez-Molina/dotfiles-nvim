@@ -32,7 +32,6 @@ return {
                 "gopls",
                 "ts_ls",
                 "volar",
-                "angularls",
                 "lemminx",
                 "jsonls",
             },
