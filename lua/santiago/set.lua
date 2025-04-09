@@ -43,3 +43,8 @@ vim.g.copilot_node_command = "~/.nvm/versions/node/v20.19.0/bin/node"
 
 -- Enable mouse support for all modes (normal, visual, insert, command)
 vim.opt.mouse = "a"
+
+-- JAVA_HOME
+local java_home = "/home/santiagohm/.sdkman/candidates/java/17.0.0-tem"
+vim.env.JAVA_HOME = java_home
+vim.env.PATH = java_home .. "/bin:" .. vim.env.PATH

@@ -9,22 +9,6 @@ vim.keymap.set("n", "<leader>u", require("undotree").toggle, { noremap = true, s
 vim.keymap.set("n", "<leader>uo", require("undotree").open, { noremap = true, silent = true, desc = "Open UndoTree" })
 vim.keymap.set("n", "<leader>uc", require("undotree").close, { noremap = true, silent = true, desc = "Close UndoTree" })
 
--- Oil
-vim.keymap.set("n", "<leader>sa", "<CMD>Oil<CR>", { desc = "Oil open parent" })
-
--- Telescope
-local builtin = require("telescope.builtin")
-vim.keymap.set("n", "<leader>fa", require("telescope").extensions.flutter.commands,
-    { noremap = true, silent = true, desc = "Telescope flutter" })
-vim.keymap.set("n", "<leader>ff", builtin.fd, {})
-vim.keymap.set("n", "<leader>fc", function()
-    builtin.fd({
-        cwd = vim.fn.stdpath("config"),
-    })
-end, { desc = "Open config" })
-vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "Grep" })
-vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Buffers" })
-vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Help tags" })
 
 -- Harpoon
 local harpoon = require("harpoon")

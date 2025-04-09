@@ -1,5 +1,22 @@
 local jdtls = {
     root_dir = vim.fs.dirname(vim.fs.find({ "gradlew", ".git", "mvnw" }, { upward = true })[1]),
+    settings = {
+        java = {
+            configuration = {
+                runtimes = {
+                    {
+                        name = "JavaSE-17",
+                        path = "~/.sdkman/candidates/java/17.0.0-tem",
+                    },
+                    {
+                        name = "JavaSE-1.8",
+                        path = "~/.sdkman/candidates/java/8.0.442-amzn",
+                        default = true,
+                    }
+                }
+            }
+        }
+    }
 }
 
 return {
@@ -8,7 +25,7 @@ return {
         require("java").setup({
             spring_boot_tools = {
                 enable = true,
-                version = '1.40.0',
+                version = '1.51.0',
             },
             jdk = {
                 auto_install = true,

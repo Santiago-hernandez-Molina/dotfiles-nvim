@@ -30,7 +30,6 @@ return {
                 -- lsp
                 "lua_ls",
                 "gopls",
-                "ts_ls",
                 "volar",
                 "lemminx",
                 "jsonls",

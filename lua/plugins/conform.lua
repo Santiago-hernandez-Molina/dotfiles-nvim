@@ -2,6 +2,16 @@ return {
 	"stevearc/conform.nvim",
 	lazy = false,
 	priority = 45,
+    keys = {
+        {
+            "<leader>mf",
+            function()
+                require("conform").format({ async = true, lsp_fallback = true })
+            end,
+            mode = { "n", "v" },
+            desc = "Format buffer"
+        },
+    },
 	opts = {
 		notify_on_error = true,
 		formatters_by_ft = {

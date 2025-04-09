@@ -108,11 +108,36 @@ local servers = {
             },
         },
     },
+    angularls = {
+        cmd = {
+            "node",
+            vim.fn.expand(
+                "~/.nvm/versions/node/v14.21.3/lib/node_modules/@angular/language-server/index.js"),
+            "--tsProbeLocations", vim.fn.expand(
+                "~/.nvm/versions/node/v14.21.3/lib/node_modules/typescript/lib"),
+            "--ngProbeLocations", vim.fn.expand(
+                "~/.nvm/versions/node/v14.21.3/lib/node_modules/@angular/language-server"),
+            "--stdio"
+        },
+        root_dir = util.root_pattern("angular.json", "project.json"),
+        filetypes = { "typescript", "html" },
+        on_new_config = function(new_config, new_root_dir)
+            new_config.cmd = {
+                "node",
+                vim.fn.expand(
+                    "~/.nvm/versions/node/v14.21.3/lib/node_modules/@angular/language-server/index.js"),
+                "--tsProbeLocations", vim.fn.expand(
+                    "~/.nvm/versions/node/v14.21.3/lib/node_modules/typescript/lib"),
+                "--ngProbeLocations", vim.fn.expand(
+                    "~/.nvm/versions/node/v14.21.3/lib/node_modules/@angular/language-server"),
+                "--stdio"
+            }
+        end
+    },
 
     tailwindcss = {
         root_dir = util.root_pattern("tailwind.config.js"),
     },
-
 }
 
 return servers

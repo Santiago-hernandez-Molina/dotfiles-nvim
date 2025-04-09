@@ -61,12 +61,12 @@ return {
         notifier = { enabled = true },
         quickfile = { enabled = true },
         scope = { enabled = true },
-        statuscolumn = { enabled = true },
+        statuscolumn = { enabled = false },
         words = { enabled = false },
         scroll = { enabled = false },
     },
     keys = {
----@diagnostic disable-next-line: undefined-global
+        ---@diagnostic disable-next-line: undefined-global
         { "<leader>gg", function() Snacks.lazygit() end, desc = "Lazygit" },
     },
 }

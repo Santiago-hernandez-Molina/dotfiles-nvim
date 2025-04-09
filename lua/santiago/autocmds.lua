@@ -40,7 +40,6 @@ vim.api.nvim_create_autocmd("LspAttach", {
     desc = "LSP actions",
     callback = function(event)
         local opts = { buffer = event.buf, remap = false }
-        local tele = require("telescope.builtin")
 
         vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
         vim.keymap.set("n", "<leader>mi", vim.lsp.buf.signature_help, opts)
@@ -50,17 +49,5 @@ vim.api.nvim_create_autocmd("LspAttach", {
         vim.keymap.set("n", "<leader>mn", vim.diagnostic.goto_next)
         vim.keymap.set("n", "<leader>mp", vim.diagnostic.goto_prev)
         vim.keymap.set("n", "<leader>mm", vim.diagnostic.open_float, opts)
-
-        vim.keymap.set("n", "gd", tele.lsp_definitions, opts)
-        vim.keymap.set("n", "gi", tele.lsp_implementations, opts)
-        vim.keymap.set("n", "gr", tele.lsp_references, opts)
-
-        vim.keymap.set("n", "<leader>ml", function()
-            tele.diagnostics({ severity_bound = 0 })
-        end, opts)
-
-        vim.keymap.set({ "n", "v" }, "<leader>mf", function()
-            require("conform").format({ async = true, lsp_fallback = true })
-        end, opts)
     end,
 })
