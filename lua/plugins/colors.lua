@@ -16,6 +16,7 @@ return {
                 sidebars = "transparent",
                 floats = "dark",
             },
+
             sidebars = { "qf", "help", "packer", "dap", "NvimTree" },
             hide_inactive_statusline = true,
             dim_inactive = true,
@@ -29,38 +30,6 @@ return {
                 auto = true,
             },
 
-            on_highlights = function(hl, c)
-                local prompt = "#2d3149"
-
-                hl.TelescopeNormal = {
-                    bg = c.bg_dark,
-                    fg = c.fg_dark,
-                }
-                hl.TelescopeBorder = {
-                    bg = c.bg_dark,
-                    fg = c.bg_dark,
-                }
-                hl.TelescopePromptNormal = {
-                    bg = prompt,
-                    fg = c.fg_dark,
-                }
-                hl.TelescopePromptBorder = {
-                    bg = prompt,
-                    fg = prompt,
-                }
-                hl.TelescopePromptTitle = {
-                    bg = prompt,
-                    fg = prompt,
-                }
-                hl.TelescopePreviewTitle = {
-                    bg = prompt,
-                    fg = c.orange,
-                }
-                hl.TelescopeResultsTitle = {
-                    bg = prompt,
-                    fg = c.orange,
-                }
-            end
         })
 
         vim.cmd [[colorscheme tokyonight]]
