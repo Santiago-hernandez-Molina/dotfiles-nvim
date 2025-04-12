@@ -75,14 +75,12 @@ return {
         },
 
         keys = {
-            ---@diagnostic disable-next-line: undefined-global
             { "<leader>gg", function() Snacks.lazygit() end,                                           desc = "Lazygit" },
-
             { "gd",         function() Snacks.picker("lsp_definitions") end,                           desc = "LSP Definitions" },
             { "gi",         function() Snacks.picker("lsp_implementations") end,                       desc = "LSP Implementations" },
             { "gr",         function() Snacks.picker("lsp_references") end,                            desc = "LSP References" },
             { "<leader>gs", function() Snacks.picker("git_status") end,                                desc = "Git Status" },
-            { "<leader>ml", function() Snacks.picker("diagnostics", { filter = { cwd = false } }) end, desc = "Show Diagnostics" },
+            { "<leader>ml", function() Snacks.picker("diagnostics", { filter = { cwd = true } }) end, desc = "Show Diagnostics" },
             { "<leader>ff", function() Snacks.picker("files", { hidden = true }) end,                  desc = "Find Files" },
             { "<leader>fc", function() Snacks.picker("files", { cwd = vim.fn.stdpath("config") }) end, desc = "Open Config" },
             { "<leader>fg", function() Snacks.picker("live_grep") end,                                 desc = "Grep" },

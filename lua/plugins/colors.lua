@@ -14,15 +14,14 @@ return {
                 functions = {},
                 variables = {},
                 sidebars = "transparent",
-                floats = "dark",
+                floats = "transparent",
             },
-
             sidebars = { "qf", "help", "packer", "dap", "NvimTree" },
             hide_inactive_statusline = true,
             dim_inactive = true,
             lualine_bold = true,
 
-            cache = true, -- When set to true, the theme will be cached for better performance
+            cache = false, -- When set to true, the theme will be cached for better performance
 
             ---@type table<string, boolean|{enabled:boolean}>
             plugins = {
@@ -30,6 +29,28 @@ return {
                 auto = true,
             },
 
+            on_highlights = function(hl, c)
+                hl.AvanteSidebarWinSeparator = {
+                    bg = c.bg_dark,
+                    fg = c.bg_dark
+                }
+                hl.AvanteSidebarWinHorizontalSeparator = {
+                    bg = c.bg_dark,
+                    fg = c.bg_dark
+                }
+                hl.AvanteSidebarNormal = {
+                    bg = c.bg_dark,
+                    fg = c.fg
+                }
+                hl.AvanteSubtitle = {
+                    bg = c.blue,
+                    fg = c.bg_dark
+                }
+                hl.AvanteThirdTitle = {
+                    bg = c.blue,
+                    fg = c.bg_dark
+                }
+            end
         })
 
         vim.cmd [[colorscheme tokyonight]]

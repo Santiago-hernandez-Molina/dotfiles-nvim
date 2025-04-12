@@ -79,7 +79,7 @@ local avanteConfig = {
         wrap = true,         -- similar to vim.o.wrap
         width = 40,          -- default % based on available width
         sidebar_header = {
-            enabled = false, -- true, false to enable/disable the header
+            enabled = true, -- true, false to enable/disable the header
             rounded = false,
         },
         input = {
@@ -101,7 +101,7 @@ local avanteConfig = {
 
     file_selector = {
         ---@diagnostic disable-next-line: undefined-doc-name
-        --- @alias FileSelectorProvider "native" | "fzf" | "mini.pick" | "snacks" | "telescope" | string | fun(params: avante.file_selector.IParams|nil): nil
+        --- @alias FileSelectorProvider "native" | "fzf" | "mini.pick" | "snacks" | "telescope" | string
         provider = "snacks",
         provider_opts = {},
     },
