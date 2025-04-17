@@ -48,3 +48,9 @@ vim.opt.mouse = "a"
 local java_home = "/home/santiagohm/.sdkman/candidates/java/17.0.0-tem"
 vim.env.JAVA_HOME = java_home
 vim.env.PATH = java_home .. "/bin:" .. vim.env.PATH
+
+vim.filetype.add({
+  extension = {
+    ['http'] = 'http',
+  },
+})
