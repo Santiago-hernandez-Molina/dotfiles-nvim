@@ -28,7 +28,7 @@ return {
 
         local bubbles_theme = {
             normal = {
-                a = { fg = colors.bg, bg = colors.blue },
+                a = { fg = colors.bg, bg = colors.git.add },
                 b = { bg = "#1f2335", fg = colors.fg },
                 c = { fg = colors.fg, bg = "#1f2335" },
             },

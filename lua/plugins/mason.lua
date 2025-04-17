@@ -42,7 +42,7 @@ return {
                         return
                     end
 
-                    if servers[server_name] ~= nil then
+                    if servers[server_name] == nil then
                         return
                     end
 
