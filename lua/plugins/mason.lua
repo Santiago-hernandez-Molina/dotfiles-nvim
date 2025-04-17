@@ -38,6 +38,10 @@ return {
             handlers = {
                 function(server_name)
                     local servers = require("utils.server_configs")
+                    if server_name == "jdtls" then
+                        return
+                    end
+
                     if servers[server_name] ~= nil then
                         return
                     end

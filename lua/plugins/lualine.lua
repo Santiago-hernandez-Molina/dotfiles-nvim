@@ -29,8 +29,8 @@ return {
         local bubbles_theme = {
             normal = {
                 a = { fg = colors.bg, bg = colors.blue },
-                b = { bg = "#2d3149", fg = colors.fg },
-                c = { fg = colors.fg, bg = "#2d3149" },
+                b = { bg = "#1f2335", fg = colors.fg },
+                c = { fg = colors.fg, bg = "#1f2335" },
             },
 
             insert = { a = { fg = colors.bg, bg = colors.green } },
@@ -87,13 +87,11 @@ return {
                         },
                     },
                 },
-                lualine_c = {
-                    '%=', center --[[ add your center components here in place of this comment ]]
-                },
+                lualine_c = {},
                 lualine_x = {},
-                lualine_y = { 'filetype', 'progress' },
+                lualine_y = { center, 'filetype' },
                 lualine_z = {
-                    { 'location', separator = { right = '' }, left_padding = 0 },
+                    { 'location', separator = { right = '' } },
                 },
             },
             inactive_sections = {

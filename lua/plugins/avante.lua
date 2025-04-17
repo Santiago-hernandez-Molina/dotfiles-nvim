@@ -75,9 +75,9 @@ local avanteConfig = {
     },
 
     windows = {
-        position = "right",  -- the position of the sidebar
-        wrap = true,         -- similar to vim.o.wrap
-        width = 40,          -- default % based on available width
+        position = "right", -- the position of the sidebar
+        wrap = true,        -- similar to vim.o.wrap
+        width = 40,         -- default % based on available width
         sidebar_header = {
             enabled = true, -- true, false to enable/disable the header
             rounded = false,
@@ -111,6 +111,7 @@ local avanteConfig = {
 
 return {
     "yetone/avante.nvim",
+    lazy = true,
     event = "VeryLazy",
     version = false,
     build = "make",

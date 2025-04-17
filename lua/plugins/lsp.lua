@@ -4,7 +4,6 @@ return {
         priority = 70,
         lazy = false,
         dependencies = {
-            "styled-components/vim-styled-components",
             "Hoffs/omnisharp-extended-lsp.nvim",
         },
 
@@ -69,6 +68,9 @@ return {
             local lspconfig = require("lspconfig")
 
             for server, config in pairs(servers) do
+                if server == "jdtls" then
+                    return
+                end
                 config.capabilities = vim.lsp.protocol.make_client_capabilities()
                 config.capabilities = require("blink.cmp").get_lsp_capabilities(config.capabilities)
 

@@ -17,7 +17,7 @@ return {
     { "terrortylor/nvim-comment", lazy = true },
     {
         "akinsho/flutter-tools.nvim",
-        lazy = false,
+        lazy = true,
         dependencies = {
             "nvim-lua/plenary.nvim",
         },

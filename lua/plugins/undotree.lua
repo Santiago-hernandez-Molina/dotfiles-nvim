@@ -1,5 +1,6 @@
 return {
     "jiaoshijie/undotree",
+    lazy = true,
     keys = {
         -- { "<leader>u",  require("undotree").toggle, desc = "Toggle UndoTree" },
         -- { "<leader>uo", require("undotree").open,   desc = "Open UndoTree" },
