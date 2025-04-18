@@ -37,17 +37,14 @@ return {
 
             handlers = {
                 function(server_name)
-                    local servers = require("utils.server_configs")
-                    if server_name == "jdtls" then
+                    local banned_serves = { ["jdtls"] = true }
+                    if banned_serves[server_name] then
                         return
                     end
+                    local servers = require("utils.server_configs_mason")
+                    local server = servers[server_name] or {}
 
-                    if servers[server_name] == nil then
-                        return
-                    end
-
-                    local server = {}
-                    server.capabilities = vim.lsp.protocol.make_client_capabilities()
+                    server.capabilities = require("blink.cmp").get_lsp_capabilities(server.capabilities)
                     require("lspconfig")[server_name].setup(server)
                 end,
             },

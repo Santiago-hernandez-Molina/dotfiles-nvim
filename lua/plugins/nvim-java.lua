@@ -37,7 +37,7 @@ return {
     {
         "nvim-java/nvim-java",
         lazy = false,
-        priority = 60,
+        priority = 30,
         config = function()
             require("java").setup({
                 spring_boot_tools = {
