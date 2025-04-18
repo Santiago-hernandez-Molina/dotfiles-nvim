@@ -20,7 +20,6 @@ return {
             check_outdated_packages_on_open = false,
         },
     },
-
     {
         "williamboman/mason-lspconfig.nvim",
         lazy = false,
@@ -49,11 +48,5 @@ return {
                 end,
             },
         }
-    },
-
-    {
-        "zapling/mason-conform.nvim",
-        priority = 40,
-        lazy = false,
     },
 }

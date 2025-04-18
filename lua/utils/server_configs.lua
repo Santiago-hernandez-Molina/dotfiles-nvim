@@ -59,8 +59,4 @@ return {
             new_config.filetypes = { "typescript", "html", "htmlangular" }
         end
     },
-
-    tailwindcss = {
-        root_dir = util.root_pattern("tailwind.config.js"),
-    },
 }
