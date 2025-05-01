@@ -75,26 +75,26 @@ local avanteConfig = {
     },
 
     windows = {
-        position = "right", -- the position of the sidebar
-        wrap = true,        -- similar to vim.o.wrap
-        width = 40,         -- default % based on available width
+        position = "right",
+        wrap = true,
+        width = 40,
         sidebar_header = {
-            enabled = true, -- true, false to enable/disable the header
+            enabled = true,
             rounded = false,
         },
         input = {
             prefix = " ",
-            height = 5, -- Height of the input window in vertical layout
+            height = 5,
         },
         edit = {
-            start_insert = true, -- Start insert mode when opening the edit window
+            start_insert = true,
             border = "solid",
         },
         ask = {
-            floating = false,          -- Open the 'AvanteAsk' prompt in a floating window
-            start_insert = true,       -- Start insert mode when opening the ask window
+            floating = false,
+            start_insert = true,
             ---@type "ours" | "theirs"
-            focus_on_apply = "theirs", -- which diff to focus after applying
+            focus_on_apply = "theirs",
             border = "solid",
         },
     },

@@ -1,4 +1,5 @@
 vim.opt.nu = true
+vim.opt.mouse = "a"
 vim.opt.relativenumber = true
 
 vim.opt.tabstop = 4
@@ -41,8 +42,6 @@ vim.g.copilot_assume_mapped = true
 vim.g.copilot_enabled = false
 vim.g.copilot_node_command = "~/.nvm/versions/node/v20.19.0/bin/node"
 
--- Enable mouse support for all modes (normal, visual, insert, command)
-vim.opt.mouse = "a"
 
 -- JAVA_HOME
 local java_home = "/home/santiagohm/.sdkman/candidates/java/17.0.0-tem"

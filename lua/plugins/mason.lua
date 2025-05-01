@@ -1,3 +1,5 @@
+local banned_serves = { ["jdtls"] = true }
+
 return {
     {
         'williamboman/mason.nvim',
@@ -36,7 +38,6 @@ return {
 
             handlers = {
                 function(server_name)
-                    local banned_serves = { ["jdtls"] = true }
                     if banned_serves[server_name] then
                         return
                     end

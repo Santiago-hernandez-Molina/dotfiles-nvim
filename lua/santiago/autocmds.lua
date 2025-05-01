@@ -26,13 +26,3 @@ vim.api.nvim_create_autocmd("LspAttach", {
         end
     end,
 })
-
-vim.api.nvim_create_autocmd("FileType", {
-    pattern = "yaml",
-    callback = function()
-        vim.opt_local.spell = false
-    end,
-    desc = "Disable spell checking for YAML files",
-})
-
-
