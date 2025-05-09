@@ -99,12 +99,6 @@ local avanteConfig = {
         },
     },
 
-    file_selector = {
-        ---@diagnostic disable-next-line: undefined-doc-name
-        --- @alias FileSelectorProvider "native" | "fzf" | "mini.pick" | "snacks" | "telescope" | string
-        provider = "snacks",
-        provider_opts = {},
-    },
 
     disabled_tools = { "web_search" },
 }
@@ -119,8 +113,6 @@ return {
         "nvim-tree/nvim-web-devicons",
         "nvim-treesitter/nvim-treesitter",
         "nvim-lua/plenary.nvim",
-        "stevearc/dressing.nvim",
-        "ibhagwan/fzf-lua",
         "MunifTanjim/nui.nvim",
         {
             -- Make sure to set this up properly if you have lazy=true

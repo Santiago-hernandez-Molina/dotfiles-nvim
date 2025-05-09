@@ -40,11 +40,11 @@ vim.opt.laststatus = 3 -- Disable the status line (0: never, 1: only if there ar
 vim.g.copilot_no_tab_map = true
 vim.g.copilot_assume_mapped = true
 vim.g.copilot_enabled = false
-vim.g.copilot_node_command = "~/.nvm/versions/node/v20.19.0/bin/node"
+vim.g.copilot_node_command = "~/.nvm/versions/node/v20.19.1/bin/node"
 
 
 -- JAVA_HOME
-local java_home = "/home/santiagohm/.sdkman/candidates/java/17.0.0-tem"
+local java_home = "/home/santiagohm/.sdkman/candidates/java/17.0.15-amzn"
 vim.env.JAVA_HOME = java_home
 vim.env.PATH = java_home .. "/bin:" .. vim.env.PATH
 

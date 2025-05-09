@@ -7,3 +7,5 @@ postgres
 auth
 websockets
 javascript
+touchpad
+sensitivity

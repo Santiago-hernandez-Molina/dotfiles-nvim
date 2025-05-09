@@ -28,7 +28,7 @@ return {
 
         local bubbles_theme = {
             normal = {
-                a = { fg = colors.bg, bg = colors.git.add },
+                a = { fg = colors.bg, bg = "#449dab" },
                 b = { bg = "#1f2335", fg = colors.fg },
                 c = { fg = colors.fg, bg = "#1f2335" },
             },
@@ -104,7 +104,7 @@ return {
             },
             tabline = {},
 
-            extensions = { "oil", "quickfix", "fzf", "symbols-outline" },
+            extensions = { "oil", "quickfix", "symbols-outline" },
         })
     end
 }

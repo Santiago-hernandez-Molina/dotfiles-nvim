@@ -1,5 +1,5 @@
 return {
-    { "github/copilot.vim",          lazy = true },
+    { "github/copilot.vim",          lazy = false },
     { "nvim-tree/nvim-web-devicons", lazy = true },
     {
         'windwp/nvim-autopairs',

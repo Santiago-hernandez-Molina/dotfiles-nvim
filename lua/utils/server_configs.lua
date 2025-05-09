@@ -25,11 +25,6 @@ return {
         },
     },
 
-    tinymist = {
-        cmd = { "tinymist" },
-        filetypes = { "typst" },
-        root_dir = "",
-    },
 
     angularls = {
         cmd = {

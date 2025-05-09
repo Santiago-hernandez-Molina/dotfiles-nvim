@@ -1,7 +1,7 @@
 return {
     {
         "folke/snacks.nvim",
-        priority = 1000,
+        priority = 2000,
         lazy = false,
         opts = {
 
@@ -15,11 +15,6 @@ return {
                 },
                 animate = {
                     enabled = false,
-                    easing = "linear",
-                    duration = {
-                        step = 20,
-                        total = 80,
-                    },
                 },
             },
 
@@ -34,7 +29,7 @@ return {
                 },
                 matcher = {
                     fuzzy = true,          -- use fuzzy matching
-                    smartcase = true,      -- use smartcase
+                    smartcase = false,      -- use smartcase
                     ignorecase = true,     -- use ignorecase
                     sort_empty = false,    -- sort results when the search string is empty
                     filename_bonus = true, -- give bonus for matching file names (last part of the path)

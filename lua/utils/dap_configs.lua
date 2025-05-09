@@ -17,12 +17,12 @@ return {
                 cwd = "${workspaceFolder}",
             },
             {
-                type = "chrome",
+                type = "firefox",
                 request = "launch",
-                name = "Start Chrome with \"localhost\"",
+                name = "Start Firefox with \"localhost\"",
                 url = "http://localhost:3000",
                 webRoot = "${workspaceFolder}",
-                userDataDir = "${workspaceFolder}/.vscode/vscode-chrome-debug-userdatadir"
+                userDataDir = "${workspaceFolder}/.vscode/vscode-firefox-debug-userdatadir"
             }
         }
     },
@@ -62,20 +62,29 @@ return {
                 protocol = "inspector",
             },
             {
-                type = "chrome",
+                type = "firefox",
                 request = "launch",
-                name = "Start Chrome with \"localhost\"",
+                name = "Start Firefox with \"localhost\"",
                 url = "http://localhost:3000",
                 webRoot = "${workspaceFolder}",
-                userDataDir = "${workspaceFolder}/.vscode/vscode-chrome-debug-userdatadir"
+                userDataDir = "${workspaceFolder}/.vscode/vscode-firefox-debug-userdatadir"
             },
             {
                 type = "chrome",
                 request = "launch",
-                name = "ng serve (custom)",
+                name = "ng serve (chrome)",
                 url = "http://localhost:4200",
                 webRoot = "${workspaceFolder}",
-                userDataDir = "${workspaceFolder}/.vscode/vscode-chrome-debug-userdatadir"
+                userDataDir = "${workspaceFolder}/.vscode/vscode-chrome-debug-userdatadir",
+                runtimeExecutable = "/usr/bin/google-chrome-stable",
+            },
+            {
+                type = "firefox",
+                request = "launch",
+                name = "ng serve (firefox)",
+                url = "http://localhost:4200",
+                webRoot = "${workspaceFolder}",
+                userDataDir = "${workspaceFolder}/.vscode/vscode-firefox-debug-userdatadir"
             }
         }
     }

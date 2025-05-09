@@ -17,6 +17,9 @@ return {
         },
     },
 
+    tinymist = {
+    },
+
     lua_ls = {
         settings = {
             Lua = {
