@@ -20,12 +20,12 @@ local jdtls = {
                 runtimes = {
                     {
                         name = "JavaSE-17",
-                        path = "~/.sdkman/candidates/java/17.0.0-tem",
+                        path = "~/.sdkman/candidates/java/17.0.15-amzn",
                         default = true,
                     },
                     {
                         name = "JavaSE-1.8",
-                        path = "~/.sdkman/candidates/java/8.0.442-amzn",
+                        path = "~/.sdkman/candidates/java/8.0.452-amzn",
                     }
                 }
             }
@@ -36,8 +36,7 @@ local jdtls = {
 return {
     {
         "nvim-java/nvim-java",
-        lazy = false,
-        priority = 30,
+        ft = { "java", "xml", "jproperties" },
         config = function()
             require("java").setup({
                 spring_boot_tools = {
@@ -52,6 +51,7 @@ return {
                     jvm = "/home/santiagohm/.local/share/nvim/mason/packages/openjdk-17/jdk-17.0.2/bin/java",
                 }
             })
+
             require("lspconfig").jdtls.setup(jdtls)
         end,
     },

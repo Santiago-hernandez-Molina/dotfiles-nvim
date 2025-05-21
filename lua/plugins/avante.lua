@@ -1,7 +1,7 @@
 local avanteConfig = {
     provider = "copilot",
     copilot = {
-        model = "claude-3.5-sonnet", --"gemini-2.0-flash-001"
+        model = "claude-3.5-sonnet",--"gemini-2.5-pro" --  --"gemini-2.0-flash-001"
     },
 
     behaviour = {
@@ -16,7 +16,7 @@ local avanteConfig = {
         auto_apply_diff_after_generation = false,
         support_paste_from_clipboard = true,
         minimize_diff = true,
-        enable_token_counting = true,
+        enable_token_counting = false,
         enable_cursor_planning_mode = false,
         enable_claude_text_editor_tool_mode = false,
     },
@@ -77,7 +77,7 @@ local avanteConfig = {
     windows = {
         position = "right",
         wrap = true,
-        width = 40,
+        width = 45,
         sidebar_header = {
             enabled = true,
             rounded = false,
@@ -88,7 +88,6 @@ local avanteConfig = {
         },
         edit = {
             start_insert = true,
-            border = "solid",
         },
         ask = {
             floating = false,

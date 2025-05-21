@@ -2,17 +2,10 @@ local omnisharp_extended = require("omnisharp_extended")
 local util = require("lspconfig.util")
 
 return {
-    pyright = {
+    basedpyright = {
         settings = {
-            pyright = {
-                disableLanguageServices = false,
-                disableOrganizeImports = false,
-                autoImportCompletion = true,
-            },
-            python = {
-                analysis = {
-                    autoSearchPaths = true,
-                },
+            basedpyright = {
+                typeCheckingMode = "standard",
             },
         },
     },

@@ -26,7 +26,7 @@ return {
 			css = { "prettier" },
 			scss = { "prettier" },
 			--
-			typst = { "typstyle" },
+			typst = { "prettypst" },
 			lua = { "stylua" },
 			python = { "autopep8" },
 			go = { "gofumpt" },

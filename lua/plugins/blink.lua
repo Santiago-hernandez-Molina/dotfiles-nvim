@@ -1,5 +1,6 @@
 return {
     "Saghen/blink.cmp",
+    lazy = true,
     version = "1.*",
     dependencies = {
         "Kaiser-Yang/blink-cmp-avante",
@@ -28,6 +29,11 @@ return {
         fuzzy = {
             implementation = "lua",
             use_proximity = true,
+            sorts = {
+                'exact',
+                'score',
+                'sort_text',
+            },
         },
 
         completion = {

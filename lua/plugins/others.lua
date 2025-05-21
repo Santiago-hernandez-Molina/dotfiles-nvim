@@ -1,5 +1,5 @@
 return {
-    { "github/copilot.vim",          lazy = false },
+    { "github/copilot.vim",          lazy = true },
     { "nvim-tree/nvim-web-devicons", lazy = true },
     {
         'windwp/nvim-autopairs',
@@ -8,7 +8,7 @@ return {
     },
     {
         "norcalli/nvim-colorizer.lua",
-        lazy = false,
+        lazy = true,
         opts = {
             '*'
         }

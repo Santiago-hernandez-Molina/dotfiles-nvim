@@ -38,7 +38,7 @@ return {
             "--stdio"
         },
         root_dir = util.root_pattern("angular.json", "project.json"),
-        filetypes = { "typescript", "html", "htmlangular"  },
+        filetypes = { "typescript", "html", "htmlangular" },
         on_new_config = function(new_config, new_root_dir)
             new_config.cmd = {
                 "node",
@@ -54,4 +54,9 @@ return {
             new_config.filetypes = { "typescript", "html", "htmlangular" }
         end
     },
+
+    djlsp = {
+        cmd = { "djlsp" },
+        root_dir = require("lspconfig.util").root_pattern("manage.py", ".git"),
+    }
 }
