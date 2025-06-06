@@ -22,5 +22,5 @@ return {
         type = "executable",
         command = "zsh",
         args = { firefox }
-    }
+    },
 }

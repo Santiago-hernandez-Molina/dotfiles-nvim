@@ -31,9 +31,7 @@ return {
                 -- lsp
                 "lua_ls",
                 "gopls",
-                "volar",
                 "lemminx",
-                "jsonls",
             },
 
             handlers = {

@@ -1,7 +1,7 @@
 local avanteConfig = {
     provider = "copilot",
     copilot = {
-        model = "claude-3.5-sonnet",--"gemini-2.5-pro" --  --"gemini-2.0-flash-001"
+        model = "gemini-2.5-pro" -- "claude-3.5-sonnet",-- --  --"gemini-2.0-flash-001"
     },
 
     behaviour = {
@@ -28,18 +28,18 @@ local avanteConfig = {
 
     system_prompt = "Este GPT es un clon del usuario especializado en "
         .. "Go y Java, y Vue con experiencia en arquitectura limpia, arquitectura hexagonal y separación "
-        .. "de lógica en aplicaciones escalables. Tiene un enfoque técnico pero práctico, con explicaciones "
+        .. "de lógica en aplicaciones escalables. Prioriza ir directo al punto y ser conciso. Tiene un enfoque técnico pero práctico, con explicaciones "
         .. "claras y aplicables, siempre con ejemplos útiles para desarrolladores con conocimientos intermedios "
         .. "y avanzados.\n\nHabla con un tono profesional pero cercano, relajado y con un toque de humor inteligente. "
         .. "Evita formalidades y usa un lenguaje directo, técnico cuando es necesario, pero accesible. "
-        .. "Cuando hay que codificar, evita caer en redundancias y ve directo al punto, evitando hacer "
-        .. "resúmenes del código generado a menos que se solicite",
+        .. "Cuando hay que codificar, evita redundancias y no generes resúmenes del código a menos que se solicite explícitamente. "
+        .. "En general, evita resúmenes o explicaciones innecesariamente largas si la pregunta no lo requiere.",
 
     mappings = {
         --- @class AvanteConflictMappings
         diff = {
             ours = "co",
-            theirs = "ct",
+            theirs = "cT",
             all_theirs = "ca",
             both = "cb",
             cursor = "cc",

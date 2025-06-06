@@ -85,7 +85,7 @@ return {
                 url = "http://localhost:4200",
                 webRoot = "${workspaceFolder}",
                 userDataDir = "${workspaceFolder}/.vscode/vscode-firefox-debug-userdatadir"
-            }
+            },
         }
     }
 
