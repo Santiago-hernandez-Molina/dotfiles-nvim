@@ -51,8 +51,8 @@ return {
                     jvm = "/home/santiagohm/.local/share/nvim/mason/packages/openjdk-17/jdk-17.0.2/bin/java",
                 }
             })
-
-            require("lspconfig").jdtls.setup(jdtls)
+            local lspconfig = require('lspconfig')
+            lspconfig['jdtls'].setup(jdtls)
         end,
     },
 }

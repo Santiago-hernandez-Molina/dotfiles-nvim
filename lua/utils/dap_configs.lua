@@ -28,9 +28,8 @@ return {
     },
 
     {
-        langs = { "typescript" },
+        langs = { "typescript", "vue" },
         settings = {
-
             {
                 name = "Launch file",
                 type = "pwa-node",
@@ -65,9 +64,18 @@ return {
                 type = "firefox",
                 request = "launch",
                 name = "Start Firefox with \"localhost\"",
-                url = "http://localhost:3000",
+                url = "http://localhost:5173",
                 webRoot = "${workspaceFolder}",
                 userDataDir = "${workspaceFolder}/.vscode/vscode-firefox-debug-userdatadir"
+            },
+            {
+                type = "chrome",
+                request = "launch",
+                name = "Start Chrome with Vite",
+                url = "http://localhost:5173",
+                webRoot = "${workspaceFolder}",
+                userDataDir = "${workspaceFolder}/.vscode/vscode-chrome-debug-userdatadir",
+                runtimeExecutable = "/usr/bin/google-chrome-stable",
             },
             {
                 type = "chrome",

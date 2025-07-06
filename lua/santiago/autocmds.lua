@@ -11,13 +11,13 @@ vim.api.nvim_create_autocmd("LspAttach", {
 
         if client ~= nil and client.name == "ts_ls" then
             for _, c in ipairs(active_clients) do
-                if c.name == "volar" then
+                if c.name == "vue_ls" then
                     client.stop()
                 end
             end
         end
 
-        if client ~= nil and client.name == "volar" then
+        if client ~= nil and client.name == "vue_ls" then
             for _, c in ipairs(active_clients) do
                 if c.name == "ts_ls" then
                     c.stop()

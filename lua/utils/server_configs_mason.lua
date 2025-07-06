@@ -23,9 +23,9 @@ return {
         },
     },
 
-    volar = {
+    vue_ls = {
+        root_markers = {  ".vue" },
         filetypes = { "typescript", "javascript", "vue" },
-        root_dir = util.root_pattern("src/App.vue"),
         init_options = {
             vue = {
                 hybridMode = false,
@@ -85,4 +85,10 @@ return {
     tailwindcss = {
         root_dir = util.root_pattern("tailwind.config.js"),
     },
+
+    gopls = {},
+    ts_ls = {},
+    cssls = {},
+    json_lsp = {},
+    sqlls = {},
 }

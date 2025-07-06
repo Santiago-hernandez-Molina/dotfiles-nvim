@@ -58,5 +58,6 @@ return {
     djlsp = {
         cmd = { "djlsp" },
         root_dir = require("lspconfig.util").root_pattern("manage.py", ".git"),
-    }
+    },
+    kulala_ls = {}
 }

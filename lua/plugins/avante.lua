@@ -1,127 +1,65 @@
-local avanteConfig = {
-    provider = "copilot",
-    copilot = {
-        model = "gemini-2.5-pro" -- "claude-3.5-sonnet",-- --  --"gemini-2.0-flash-001"
-    },
-
-    behaviour = {
-        auto_focus_sidebar = true,
-        auto_suggestions_respect_ignore = false,
-        jump_result_buffer_on_finish = false,
-        use_cwd_as_project_root = true,
-
-        auto_suggestions = false,
-        auto_set_highlight_group = true,
-        auto_set_keymaps = true,
-        auto_apply_diff_after_generation = false,
-        support_paste_from_clipboard = true,
-        minimize_diff = true,
-        enable_token_counting = false,
-        enable_cursor_planning_mode = false,
-        enable_claude_text_editor_tool_mode = false,
-    },
-
-    kind_icons = {
-        AvanteCmd = "",
-        AvanteMention = "",
-    },
-
-    system_prompt = "Este GPT es un clon del usuario especializado en "
-        .. "Go y Java, y Vue con experiencia en arquitectura limpia, arquitectura hexagonal y separación "
-        .. "de lógica en aplicaciones escalables. Prioriza ir directo al punto y ser conciso. Tiene un enfoque técnico pero práctico, con explicaciones "
-        .. "claras y aplicables, siempre con ejemplos útiles para desarrolladores con conocimientos intermedios "
-        .. "y avanzados.\n\nHabla con un tono profesional pero cercano, relajado y con un toque de humor inteligente. "
-        .. "Evita formalidades y usa un lenguaje directo, técnico cuando es necesario, pero accesible. "
-        .. "Cuando hay que codificar, evita redundancias y no generes resúmenes del código a menos que se solicite explícitamente. "
-        .. "En general, evita resúmenes o explicaciones innecesariamente largas si la pregunta no lo requiere.",
-
-    mappings = {
-        --- @class AvanteConflictMappings
-        diff = {
-            ours = "co",
-            theirs = "cT",
-            all_theirs = "ca",
-            both = "cb",
-            cursor = "cc",
-            next = "]x",
-            prev = "[x",
-        },
-        suggestion = {
-            accept = "<M-l>",
-            next = "<M-]>",
-            prev = "<M-[>",
-            dismiss = "<C-]>",
-        },
-        jump = {
-            next = "]]",
-            prev = "[[",
-        },
-        submit = {
-            normal = "<CR>",
-            insert = "<C-s>",
-        },
-        sidebar = {
-            apply_all = "A",
-            apply_cursor = "a",
-            retry_user_request = "r",
-            edit_user_request = "e",
-            switch_windows = "<Tab>",
-            reverse_switch_windows = "<S-Tab>",
-            remove_file = "d",
-            add_file = "@",
-            close = { "<Esc>", "q" },
-            close_from_input = { normal = "q", insert = "<C-d>" },
-        },
-    },
-
-    windows = {
-        position = "right",
-        wrap = true,
-        width = 45,
-        sidebar_header = {
-            enabled = true,
-            rounded = false,
-        },
-        input = {
-            prefix = " ",
-            height = 5,
-        },
-        edit = {
-            start_insert = true,
-        },
-        ask = {
-            floating = false,
-            start_insert = true,
-            ---@type "ours" | "theirs"
-            focus_on_apply = "theirs",
-            border = "solid",
-        },
-    },
-
-
-    disabled_tools = { "web_search" },
-}
-
 return {
-    "yetone/avante.nvim",
-    lazy = true,
-    event = "VeryLazy",
-    version = false,
-    build = "make",
+    "azorng/goose.nvim",
+    config = function()
+        require("goose").setup({
+            keymap = {
+                global = {
+                    toggle = "<leader>at",
+                    open_input = "<leader>ai",
+                    open_input_new_session = "<leader>aI",
+                    open_output = "<leader>ao",
+                    toggle_focus = "<leader>at",
+                    close = "<leader>aq",
+                    toggle_fullscreen = "<leader>af",
+                    select_session = "<leader>as",
+                    goose_mode_chat = "<leader>amc",
+                    goose_mode_auto = "<leader>ama",
+                    configure_provider = "<leader>ap",
+                    diff_open = "<leader>ad",    -- Opens a diff tab of a modified file since the last goose prompt
+                    diff_next = "<leader>a]",    -- Navigate to next file diff
+                    diff_prev = "<leader>a[",    -- Navigate to previous file diff
+                    diff_close = "<leader>ac",   -- Close diff view tab and return to normal editing
+                    diff_revert_all = "<leader>ara", -- Revert all file changes since the last goose prompt
+                    diff_revert_this = "<leader>art", -- Revert current file changes since the last goose prompt
+                },
+                window = {
+                    submit = "<cr>",      -- Submit prompt
+                    close = "<esc>",      -- Close UI windows
+                    stop = "<C-c>",       -- Stop goose while it is running
+                    next_message = "]]",  -- Navigate to next message in the conversation
+                    prev_message = "[[",  -- Navigate to previous message in the conversation
+                    mention_file = "@",   -- Pick a file and add to context. See File Mentions section
+                    toggle_pane = "<tab>", -- Toggle between input and output panes
+                    prev_prompt_history = "<up>", -- Navigate to previous prompt in history
+                    next_prompt_history = "<down>", -- Navigate to next prompt in history
+                },
+            },
+            ui = {
+                window_width = 0.35, -- Width as percentage of editor width
+                input_height = 0.15, -- Input height as percentage of window height
+                fullscreen = false, -- Start in fullscreen mode (default: false)
+                layout = "center", -- Options: "center" or "right"
+                floating_height = 0.8, -- Height as percentage of editor height for "center" layout
+                display_model = true, -- Display model name on top winbar
+                display_goose_mode = true, -- Display mode on top winbar: auto|chat
+            },
+            providers = {
+                github_copilot = {
+                    "gpt-4o",
+                    "gpt-4.1",
+                    "gemini-2.5-pro",
+                    "claude-3.5-sonnet",
+                },
+            },
+        })
+    end,
     dependencies = {
-        "nvim-tree/nvim-web-devicons",
-        "nvim-treesitter/nvim-treesitter",
         "nvim-lua/plenary.nvim",
-        "MunifTanjim/nui.nvim",
         {
-            -- Make sure to set this up properly if you have lazy=true
             "MeanderingProgrammer/render-markdown.nvim",
             opts = {
-                file_types = { "markdown", "Avante" },
+                anti_conceal = { enabled = false },
             },
-
-            ft = { "markdown", "Avante" },
         },
     },
-    opts = avanteConfig,
 }

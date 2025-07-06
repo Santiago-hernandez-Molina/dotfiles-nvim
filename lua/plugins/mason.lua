@@ -1,8 +1,7 @@
-local banned_serves = { ["jdtls"] = true }
-
 return {
     {
-        'williamboman/mason.nvim',
+        "mason-org/mason.nvim",
+        version = "^1.0.0",
         lazy = false,
         priority = 60,
         opts = {
@@ -21,31 +20,5 @@ return {
 
             check_outdated_packages_on_open = false,
         },
-    },
-    {
-        "williamboman/mason-lspconfig.nvim",
-        lazy = false,
-        priority = 55,
-        opts = {
-            ensure_installed = {
-                -- lsp
-                "lua_ls",
-                "gopls",
-                "lemminx",
-            },
-
-            handlers = {
-                function(server_name)
-                    if banned_serves[server_name] then
-                        return
-                    end
-                    local servers = require("utils.server_configs_mason")
-                    local server = servers[server_name] or {}
-
-                    server.capabilities = require("blink.cmp").get_lsp_capabilities(server.capabilities)
-                    require("lspconfig")[server_name].setup(server)
-                end,
-            },
-        }
     },
 }

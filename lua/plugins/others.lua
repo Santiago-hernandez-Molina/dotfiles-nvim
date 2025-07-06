@@ -8,7 +8,7 @@ return {
     },
     {
         "norcalli/nvim-colorizer.lua",
-        lazy = true,
+        lazy = false,
         opts = {
             '*'
         }

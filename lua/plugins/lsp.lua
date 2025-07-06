@@ -65,12 +65,23 @@ return {
 
         config = function()
             local servers = require("utils.server_configs")
-            local lspconfig = require("lspconfig")
+            local servers_mason = require("utils.server_configs_mason")
 
             for server, config in pairs(servers) do
-                config.capabilities = require("blink.cmp").get_lsp_capabilities(config.capabilities)
-                lspconfig[server].setup(config)
+                local capabilities = vim.lsp.protocol.make_client_capabilities()
+                config.capabilities = require("blink.cmp").get_lsp_capabilities(capabilities)
+                vim.lsp.config(server, config)
+                vim.lsp.enable(server)
             end
+
+            for server, config in pairs(servers_mason) do
+                local capabilities = vim.lsp.protocol.make_client_capabilities()
+                config.capabilities = require("blink.cmp").get_lsp_capabilities(capabilities)
+                vim.lsp.config(server, config)
+                vim.lsp.enable(server)
+            end
+
+            require("lspconfig")['angularls'].setup(servers.angularls)
         end
     },
 }

@@ -23,4 +23,9 @@ return {
         command = "zsh",
         args = { firefox }
     },
+    zen = {
+        type = "executable",
+        command = "zsh",
+        args = { chrome }
+    },
 }

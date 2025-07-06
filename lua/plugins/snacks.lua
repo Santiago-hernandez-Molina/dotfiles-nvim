@@ -76,6 +76,7 @@ return {
         keys = {
             { "<leader>gg", function() Snacks.lazygit() end,                                           desc = "Lazygit" },
             { "gd",         function() Snacks.picker("lsp_definitions") end,                           desc = "LSP Definitions" },
+            { "gt",         function() Snacks.picker("lsp_type_definitions") end,                           desc = "LSP Type Definitions" },
             { "gi",         function() Snacks.picker("lsp_implementations") end,                       desc = "LSP Implementations" },
             { "gr",         function() Snacks.picker("lsp_references") end,                            desc = "LSP References" },
             { "<leader>gs", function() Snacks.picker("git_status") end,                                desc = "Git Status" },

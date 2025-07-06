@@ -11,6 +11,7 @@ return {
             opts = {},
         },
     },
+    build = "cargo build --release",
     opts = {
         sources = {
             default = { "avante", "lsp", "path", "snippets", "buffer", "cmdline",
