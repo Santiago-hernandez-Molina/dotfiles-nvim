@@ -1,28 +1,11 @@
+-- Autocomando para establecer filetype htmlangular cuando angularls está activo en archivos HTML
 vim.api.nvim_create_autocmd("LspAttach", {
-    group = vim.api.nvim_create_augroup("LspAttachConflicts", { clear = true }),
-    desc = "Prevent tsserver and volar conflict",
+    pattern = "*.html",
     callback = function(args)
-        if not (args.data and args.data.client_id) then
-            return
-        end
-
-        local active_clients = vim.lsp.get_clients()
         local client = vim.lsp.get_client_by_id(args.data.client_id)
-
-        if client ~= nil and client.name == "ts_ls" then
-            for _, c in ipairs(active_clients) do
-                if c.name == "vue_ls" then
-                    client.stop()
-                end
-            end
-        end
-
-        if client ~= nil and client.name == "vue_ls" then
-            for _, c in ipairs(active_clients) do
-                if c.name == "ts_ls" then
-                    c.stop()
-                end
-            end
+        if client and client.name == "angularls" then
+            vim.bo[args.buf].filetype = "htmlangular"
         end
     end,
+    desc = "Set filetype to htmlangular when angularls attaches to HTML files"
 })

@@ -1,5 +1,13 @@
 local omnisharp_extended = require("omnisharp_extended")
 local util = require("lspconfig.util")
+local vue_language_server_path = vim.fn.stdpath('data') ..
+    "/mason/packages/vue-language-server/node_modules/@vue/language-server"
+local vue_plugin = {
+    name = '@vue/typescript-plugin',
+    location = vue_language_server_path,
+    languages = { 'vue' },
+    configNamespace = 'typescript',
+}
 
 return {
     basedpyright = {
@@ -23,14 +31,8 @@ return {
         },
     },
 
+
     vue_ls = {
-        root_markers = {  ".vue" },
-        filetypes = { "typescript", "javascript", "vue" },
-        init_options = {
-            vue = {
-                hybridMode = false,
-            },
-        },
     },
 
     solargraph = {
@@ -83,12 +85,32 @@ return {
     },
 
     tailwindcss = {
-        root_dir = util.root_pattern("tailwind.config.js"),
+        root_markers = { "tailwind.config.js" },
     },
 
     gopls = {},
-    ts_ls = {},
+    ts_ls = {
+    },
+    vtsls = {
+        settings = {
+            vtsls = {
+                tsserver = {
+                    globalPlugins = {
+                        vue_plugin,
+                    },
+                },
+            },
+        },
+        filetypes = { 'vue', "typescript", "javascript" },
+    },
     cssls = {},
-    json_lsp = {},
-    sqlls = {},
+    jsonls = {},
+    sqls = {
+        on_attach = function(client, bufnr)
+            require('sqls').on_attach(client, bufnr)
+        end
+    },
+    html = {},
+    emmet_language_server = {},
+    elixirls = {},
 }

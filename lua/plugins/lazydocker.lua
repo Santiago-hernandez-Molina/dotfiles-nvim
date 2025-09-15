@@ -1,5 +1,6 @@
 return {
     "crnvl96/lazydocker.nvim",
+    lazy=false,
     keys = {
         {
             "<leader>gd",

@@ -68,15 +68,11 @@ return {
             local servers_mason = require("utils.server_configs_mason")
 
             for server, config in pairs(servers) do
-                local capabilities = vim.lsp.protocol.make_client_capabilities()
-                config.capabilities = require("blink.cmp").get_lsp_capabilities(capabilities)
                 vim.lsp.config(server, config)
                 vim.lsp.enable(server)
             end
 
             for server, config in pairs(servers_mason) do
-                local capabilities = vim.lsp.protocol.make_client_capabilities()
-                config.capabilities = require("blink.cmp").get_lsp_capabilities(capabilities)
                 vim.lsp.config(server, config)
                 vim.lsp.enable(server)
             end

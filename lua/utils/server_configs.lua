@@ -10,9 +10,7 @@ return {
                         group = "module",
                     },
                 },
-                checkOnSave = {
-                    command = "clippy",
-                },
+                checkOnSave = true,
                 cargo = {
                     buildScripts = {
                         enable = true,

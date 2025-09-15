@@ -14,13 +14,8 @@ return {
         }
     },
 
-    { "terrortylor/nvim-comment", lazy = true },
-    {
-        "akinsho/flutter-tools.nvim",
-        lazy = true,
-        dependencies = {
-            "nvim-lua/plenary.nvim",
-        },
-    },
+    { 'terrortylor/nvim-comment', lazy = true },
     { "kaarmu/typst.vim",         ft = { "typst" } },
+    { 'nanotee/sqls.nvim',        ft = { "sql" } },
+    { 'tpope/vim-surround',       lazy = false }
 }

@@ -5,12 +5,6 @@ return {
         'rcarriga/nvim-dap-ui',
         'theHamsta/nvim-dap-virtual-text',
         "mxsdev/nvim-dap-vscode-js",
-        {
-            "microsoft/vscode-js-debug",
-            build = "npm install --legacy-peer-deps && npx gulp vsDebugServerBundle && mv dist out",
-            lazy = true,
-        },
-
         "leoluz/nvim-dap-go",
     },
     config = function()

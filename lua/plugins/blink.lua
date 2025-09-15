@@ -1,9 +1,8 @@
 return {
-    "Saghen/blink.cmp",
-    lazy = true,
+    "saghen/blink.cmp",
+    lazy = false,
     version = "1.*",
     dependencies = {
-        "Kaiser-Yang/blink-cmp-avante",
         "rafamadriz/friendly-snippets",
         {
             'saghen/blink.compat',
@@ -11,24 +10,13 @@ return {
             opts = {},
         },
     },
-    build = "cargo build --release",
     opts = {
         sources = {
-            default = { "avante", "lsp", "path", "snippets", "buffer", "cmdline",
-            },
-            providers = {
-                avante = {
-                    module = 'blink-cmp-avante',
-                    name = 'Avante',
-                    opts = {
-                        -- options for blink-cmp-avante
-                    }
-                }
-            },
+            default = { "lsp", "path", "snippets", "buffer", "cmdline" },
         },
         signature = { enabled = true },
         fuzzy = {
-            implementation = "lua",
+            implementation = "prefer_rust_with_warning",
             use_proximity = true,
             sorts = {
                 'exact',

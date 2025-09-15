@@ -19,10 +19,10 @@ return {
             },
 
             picker = {
-                enabled = true,
+                enabled = false,
                 ui_select = true,
                 files = {
-                    enabled = true, -- show file icons
+                    enabled = false, -- show file icons
                     dir = "󰉋 ",
                     dir_open = "󰝰 ",
                     file = "󰈔 "
@@ -42,6 +42,7 @@ return {
                 },
                 exclude = {               -- add folder names here to exclude
                     ".git",
+                    ".vscode",
                     "node_modules",
                 }
             },
@@ -61,32 +62,20 @@ return {
 
             input = { enabled = true },
             git = { enabled = true },
-            health = { enabled = true },
+            health = { enabled = false },
             bigfile = { enabled = true },
             dashboard = { enabled = false },
             explorer = { enabled = false },
             notifier = { enabled = true },
-            quickfile = { enabled = true },
-            scope = { enabled = true },
+            quickfile = { enabled = false },
+            scope = { enabled = false },
             statuscolumn = { enabled = false },
             words = { enabled = false },
             scroll = { enabled = false },
         },
 
         keys = {
-            { "<leader>gg", function() Snacks.lazygit() end,                                           desc = "Lazygit" },
-            { "gd",         function() Snacks.picker("lsp_definitions") end,                           desc = "LSP Definitions" },
-            { "gt",         function() Snacks.picker("lsp_type_definitions") end,                           desc = "LSP Type Definitions" },
-            { "gi",         function() Snacks.picker("lsp_implementations") end,                       desc = "LSP Implementations" },
-            { "gr",         function() Snacks.picker("lsp_references") end,                            desc = "LSP References" },
-            { "<leader>gs", function() Snacks.picker("git_status") end,                                desc = "Git Status" },
-            { "<leader>ml", function() Snacks.picker("diagnostics", { filter = { cwd = true } }) end,  desc = "Show Diagnostics" },
-            { "<leader>ff", function() Snacks.picker("files", { hidden = true }) end,                  desc = "Find Files" },
-            { "<leader>fc", function() Snacks.picker("files", { cwd = vim.fn.stdpath("config") }) end, desc = "Open Config" },
-            { "<leader>fg", function() Snacks.picker("live_grep") end,                                 desc = "Grep" },
-            { "<leader>fb", function() Snacks.picker("buffers") end,                                   desc = "Buffers" },
-            { "<leader>fh", function() Snacks.picker("help") end,                                      desc = "Help Tags" },
-            -- { "<leader>fa", function() Snacks.picker("flutter_commands") end,                          desc = "Flutter Commands" },
+            { "<leader>gg", function() Snacks.lazygit() end, desc = "Lazygit" },
         },
     },
 }
