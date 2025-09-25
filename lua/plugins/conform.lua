@@ -16,7 +16,7 @@ return {
         notify_on_error = true,
         formatters = {
             prettier = {
-                trailing_comma = 'all',
+                append_args = { "--trailing-comma", "none" },
             },
         },
         formatters_by_ft = {
@@ -30,13 +30,12 @@ return {
             vue = { "prettier" },
             css = { "prettier" },
             scss = { "prettier" },
-            --
             typst = { "prettypst" },
             lua = { "stylua" },
             python = { "autopep8" },
             go = { "gofumpt" },
-            ruby = { "rubocop" },
-            rust = { "rustfmt" },
+            -- ruby = { "rubocop" },
+            -- rust = { "rustfmt" },
             sh = { "shfmt" },
             zsh = { "shfmt" },
             yaml = { "yamlfmt" },

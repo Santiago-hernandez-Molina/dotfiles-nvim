@@ -1,27 +1,27 @@
 local util = require("lspconfig.util")
 
 return {
-    rust_analyzer = {
-        cmd = { "rust-analyzer" },
-        settings = {
-            ["rust-analyzer"] = {
-                imports = {
-                    granularity = {
-                        group = "module",
-                    },
-                },
-                checkOnSave = true,
-                cargo = {
-                    buildScripts = {
-                        enable = true,
-                    },
-                },
-                procMacro = {
-                    enable = true,
-                },
-            },
-        },
-    },
+    -- rust_analyzer = {
+    --     cmd = { "rust-analyzer" },
+    --     settings = {
+    --         ["rust-analyzer"] = {
+    --             imports = {
+    --                 granularity = {
+    --                     group = "module",
+    --                 },
+    --             },
+    --             checkOnSave = true,
+    --             cargo = {
+    --                 buildScripts = {
+    --                     enable = true,
+    --                 },
+    --             },
+    --             procMacro = {
+    --                 enable = true,
+    --             },
+    --         },
+    --     },
+    -- },
 
 
     angularls = {
@@ -53,9 +53,9 @@ return {
         end
     },
 
-    djlsp = {
-        cmd = { "djlsp" },
-        root_dir = require("lspconfig.util").root_pattern("manage.py", ".git"),
-    },
-    kulala_ls = {}
+    -- djlsp = {
+    --     cmd = { "djlsp" },
+    --     root_dir = require("lspconfig.util").root_pattern("manage.py", ".git"),
+    -- },
+    -- kulala_ls = {}
 }
