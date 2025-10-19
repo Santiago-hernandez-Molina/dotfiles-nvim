@@ -77,7 +77,7 @@ return {
                 vim.lsp.enable(server)
             end
 
-            require("lspconfig")['angularls'].setup(servers.angularls)
+            -- require("lspconfig")['angularls'].setup(servers.angularls)
         end
     },
 }

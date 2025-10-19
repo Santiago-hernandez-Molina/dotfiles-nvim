@@ -1,49 +1,50 @@
 return {
-    "stevearc/conform.nvim",
-    lazy = false,
-    priority = 45,
-    keys = {
-        {
-            "<leader>mf",
-            function()
-                require("conform").format({ async = true, lsp_fallback = true })
-            end,
-            mode = { "n", "v" },
-            desc = "Format buffer"
-        },
-    },
-    opts = {
-        notify_on_error = true,
-        formatters = {
-            prettier = {
-                append_args = { "--trailing-comma", "none" },
-            },
-        },
-        formatters_by_ft = {
-            -- prettier
-            typescriptreact = { "prettier" },
-            javascriptreact = { "prettier" },
-            htmlangular = { "prettier" },
-            javascript = { "prettier" },
-            typescript = { "prettier" },
-            json = { "prettier" },
-            vue = { "prettier" },
-            css = { "prettier" },
-            scss = { "prettier" },
-            typst = { "prettypst" },
-            lua = { "stylua" },
-            python = { "autopep8" },
-            go = { "gofumpt" },
-            -- ruby = { "rubocop" },
-            -- rust = { "rustfmt" },
-            sh = { "shfmt" },
-            zsh = { "shfmt" },
-            yaml = { "yamlfmt" },
-            html = { "htmlbeautifier" },
-            bib = { "bibtex-tidy" },
-            xml = { "xmlformat" },
-            sql = { "sleek" },
-            groovy = { "npm-groovy-lint" },
-        },
-    },
+	"stevearc/conform.nvim",
+	lazy = false,
+	priority = 45,
+	keys = {
+		{
+			"<leader>mf",
+			function()
+				require("conform").format({ async = true, lsp_fallback = true })
+			end,
+			mode = { "n", "v" },
+			desc = "Format buffer",
+		},
+	},
+	opts = {
+		notify_on_error = true,
+		formatters = {
+			prettier = {
+				append_args = { "--trailing-comma", "none" },
+			},
+		},
+		formatters_by_ft = {
+			-- prettier
+			typescriptreact = { "prettier" },
+			javascriptreact = { "prettier" },
+			htmlangular = { "prettier" },
+			javascript = { "prettier" },
+			typescript = { "prettier" },
+			json = { "prettier" },
+			vue = { "prettier" },
+			css = { "prettier" },
+			scss = { "prettier" },
+			typst = { "prettypst" },
+			lua = { "stylua" },
+			python = { "autopep8" },
+			go = { "golines", "gofumpt" },
+			-- ruby = { "rubocop" },
+			-- rust = { "rustfmt" },
+			sh = { "shfmt" },
+			zsh = { "shfmt" },
+			yaml = { "yamlfmt" },
+			html = { "htmlbeautifier" },
+			bib = { "bibtex-tidy" },
+			xml = { "xmlformat" },
+			sql = { "sleek" },
+			groovy = { "npm-groovy-lint" },
+			http = { "kulala" },
+		},
+	},
 }
