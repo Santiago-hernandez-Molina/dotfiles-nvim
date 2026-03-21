@@ -32,7 +32,7 @@ return {
                 rg_opts =
                 "--files --follow -g '!.*' -g '!target' -g '!build' -g '!*.class' -g '!*.jar' -g '!*.war'",
                 fd_opts =
-                "--type f --follow --exclude '.*' --exclude target --exclude build --exclude '*.class' --exclude '*.jar' --exclude '*.war'",
+                "--type f --follow --exclude '.*' --exclude target --exclude build --exclude '*.class' --exclude '*.jar' --exclude '*.war' --exclude venv",
                 formatter = "path.filename_first",
                 winopts = {
                     preview = {

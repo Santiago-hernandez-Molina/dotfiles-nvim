@@ -1,36 +1,42 @@
 return {
-    "nvim-treesitter/nvim-treesitter",
-    run = ":TSUpdate",
-    event = "BufReadPost",
-    config = function()
-        require("nvim-treesitter.configs").setup({
-            auto_install = false,
-            ensure_installed = {
-                "rust",
-                "vimdoc",
-                "php",
-                "lua",
-                "vim",
-                "typescript",
-                "go",
-                "ruby",
-                "python",
-                "java",
-                "vue",
-                "angular",
-                "css",
-                "html",
-                "tsx",
-                "bash",
-            },
-
-            sync_install = false,
-            indent = { enable = false },
-
-            highlight = {
-                enable = true,
-                additional_vim_regex_highlighting = true,
-            },
-        })
-    end
+	"nvim-treesitter/nvim-treesitter",
+	lazy = false,
+	event = { "VeryLazy" },
+	opts_extend = { "ensure_installed" },
+	cmd = { "TSUpdate", "TSInstall", "TSLog", "TSUninstall" },
+	opts = {
+		indent = { enable = true },
+		highlight = { enable = true },
+		folds = { enable = true },
+		ensure_installed = {
+			"bash",
+			"diff",
+			"html",
+			"javascript",
+			"jsdoc",
+			"json",
+			"jsonc",
+			"lua",
+			"luadoc",
+			"luap",
+			"markdown",
+			"markdown_inline",
+			"printf",
+			"python",
+			"regex",
+			"toml",
+			"tsx",
+			"typescript",
+			"vim",
+			"vimdoc",
+			"xml",
+			"yaml",
+			"vue",
+			"go",
+		},
+	},
+	config = function(_, opts)
+		local TS = require("nvim-treesitter")
+		TS.setup(opts)
+	end,
 }

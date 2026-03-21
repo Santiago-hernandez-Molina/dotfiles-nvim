@@ -26,6 +26,8 @@ return {
 					"Avante",
 					"AvanteInput",
 					"AvanteSelectedFiles",
+					"StatusLine",
+					"StatusLineNC",
 				},
 				hide_inactive_statusline = true,
 				dim_inactive = true,

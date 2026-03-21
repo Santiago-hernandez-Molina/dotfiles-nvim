@@ -1,5 +1,6 @@
-local omnisharp_extended = require("omnisharp_extended")
-local util = require("lspconfig.util")
+-- local omnisharp_extended = require("omnisharp_extended")
+-- local util = require("lspconfig.util")
+--
 local vue_language_server_path = vim.fn.stdpath("data")
 	.. "/mason/packages/vue-language-server/node_modules/@vue/language-server"
 local vue_plugin = {
@@ -10,9 +11,9 @@ local vue_plugin = {
 }
 
 return {
-	basedpyright = {
+	pyright = {
 		settings = {
-			basedpyright = {
+			pyright = {
 				typeCheckingMode = "standard",
 			},
 		},
@@ -31,21 +32,6 @@ return {
 	},
 
 	vue_ls = {},
-
-	-- solargraph = {
-	--     settings = {
-	--         solargraph = {
-	--             autoformat = false,
-	--             formatting = false,
-	--             completion = true,
-	--             diagnostic = true,
-	--             folding = true,
-	--             references = true,
-	--             rename = true,
-	--             symbols = true,
-	--         },
-	--     },
-	-- },
 
 	lemminx = {
 		filetypes = { "xml" },
@@ -86,7 +72,6 @@ return {
 	},
 
 	gopls = {},
-	-- ts_ls = {},
 	vtsls = {
 		settings = {
 			vtsls = {
@@ -108,6 +93,5 @@ return {
 	yamlls = {},
 	hyprls = {},
 	taplo = {},
-
-	-- elixirls = {},
+	angularls = {},
 }

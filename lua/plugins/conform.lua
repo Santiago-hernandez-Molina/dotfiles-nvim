@@ -27,6 +27,7 @@ return {
 			javascript = { "prettier" },
 			typescript = { "prettier" },
 			json = { "prettier" },
+			jsonc = { "prettier" },
 			vue = { "prettier" },
 			css = { "prettier" },
 			scss = { "prettier" },
@@ -45,6 +46,7 @@ return {
 			sql = { "sleek" },
 			groovy = { "npm-groovy-lint" },
 			http = { "kulala" },
+			toml = { "taplo" },
 		},
 	},
 }

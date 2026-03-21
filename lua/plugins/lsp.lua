@@ -64,13 +64,7 @@ return {
         end,
 
         config = function()
-            local servers = require("utils.server_configs")
             local servers_mason = require("utils.server_configs_mason")
-
-            for server, config in pairs(servers) do
-                vim.lsp.config(server, config)
-                vim.lsp.enable(server)
-            end
 
             for server, config in pairs(servers_mason) do
                 vim.lsp.config(server, config)
