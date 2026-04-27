@@ -13,20 +13,15 @@ vim.api.nvim_create_autocmd("FileType", {
 	pattern = {
 		"vue",
 		"go",
+        "lua",
 		"html",
 		"typescript",
 		"javascript",
 		"python",
 		"css",
+        "scss",
 		"java",
+        "cs",
 	},
-	callback = function(args)
-		local bufnr = args.buf
-		local lang = vim.bo[bufnr].filetype
-		local ok, _ = pcall(vim.treesitter.start, bufnr, lang)
-
-		if not ok then
-			vim.cmd("syntax on")
-		end
-	end,
+    callback = function() vim.treesitter.start() end,
 })

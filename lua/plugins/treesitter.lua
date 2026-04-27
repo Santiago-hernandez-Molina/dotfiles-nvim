@@ -1,9 +1,7 @@
 return {
 	"nvim-treesitter/nvim-treesitter",
 	lazy = false,
-	event = { "VeryLazy" },
-	opts_extend = { "ensure_installed" },
-	cmd = { "TSUpdate", "TSInstall", "TSLog", "TSUninstall" },
+	build = ":TSUpdate",
 	opts = {
 		indent = { enable = true },
 		highlight = { enable = true },
@@ -33,6 +31,9 @@ return {
 			"yaml",
 			"vue",
 			"go",
+			"c_sharp",
+            "css",
+            "scss"
 		},
 	},
 	config = function(_, opts)

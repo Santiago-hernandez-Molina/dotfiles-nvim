@@ -50,6 +50,11 @@ return {
 								default = true,
 							},
 						},
+						{
+							name = "JavaSE-21",
+							path = "~/.sdkman/candidates/java/21.0.10-amzn",
+							default = true,
+						},
 					},
 				},
 			},
